@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int low=1, high=nums.size(), mid, ans=-1;
+        while(low<=high)
+        {
+            mid=(low+high)/2;
+            if(nums[mid-1]==target)
+            {
+                ans=mid;
+                break;
+            }
+            else if(nums[mid-1]<target)
+            {
+                low=mid+1;
+            }
+            else
+            {
+                high=mid-1;
+            }
+        }
+        if(ans==-1)
+            return ans;
+        return ans-1;
+        
+    }
+};
